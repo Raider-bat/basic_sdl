@@ -8,6 +8,7 @@ int main(int argc, char const *argv[]) {
   }
   else
     std::cout << "Succsess compile! " << '\n';
+    std::cout <<" Change in codes" << '\n';
 	SDL_Quit();
 	return 0;
 }
