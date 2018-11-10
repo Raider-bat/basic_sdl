@@ -8,7 +8,7 @@ int main(int argc, char const *argv[]) {
   }
   else
     std::cout << "Succsess compile! " << '\n';
-    std::cout <<" Изменение файла" << '\n';
+    std::cout <<" changes in code " << '\n';
 	SDL_Quit();
 	return 0;
 }
