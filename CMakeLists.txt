@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.1)
 project(basic_sdl)
 
 # Use our modified FindSDL2* modules
@@ -24,6 +24,9 @@ endif()
 # Look up SDL2 and add the include directory to our include path
 find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIR})
+
+find_package(GLM REQUIRED)
+include_directories(&{GLM_INCLUDE_DIRS})
 
 # Look in the sourse subdirectory to find its CMakeLists.txt so we can build the executable
 add_subdirectory(code)

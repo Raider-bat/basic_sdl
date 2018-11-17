@@ -1,94 +1,49 @@
-#include <iostream>
+#include "AbstractWindow.h"
 #include <SDL.h>
+#include <iostream>
 
-bool init(const char*, int, int, int, int, int);
-void render();
-void handleEvents();
-void clean();
-
-SDL_Window *g_pWindow;
-SDL_Renderer *g_pRenderer;
-bool g_bRunning = false;
-
-
-int main(int argc, char const *argv[]) {
-
-  init("Test Window", 0, 0, 400, 600, SDL_WINDOW_SHOWN);
-  while (g_bRunning)
-  {
-    render();
-    handleEvents();
-  }
-
-	clean();
-	return 0;
-}
-
-bool init (const char* title, int xpos,int ypos, int height, int width, int flags)
+class CWindow : public CAbstractWindow
 {
-  if (SDL_Init(SDL_INIT_EVERYTHING) >= 0)
-  {
-    // FIXME: передача параметров экрана через аргументы
-    //SDL_DisplayMode displayMode;
-    //int request = SDL_GetDesktopDisplayMode(0,&displayMode);
-
-    g_pWindow = SDL_CreateWindow(title, xpos, ypos, height, width, flags);
-    if (g_pWindow != nullptr)
+protected:
+    void OnWindowEvent(const SDL_Event &event) override
     {
-      g_pRenderer = SDL_CreateRenderer(g_pWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-      if (g_pRenderer == nullptr)
-      {
-        std::cout << "SDL_CreateRenderer Error: " << SDL_GetError() << std::endl;
-        return false;
-      }
+        if (event.type == SDL_KEYDOWN)
+        {
+            switch (event.key.keysym.sym)
+            {
+            case SDLK_r:
+              SetBackgroundColor({1, 0, 0, 1});
+              std::cout << "INFO: U press r, change color red" << '\n';
+                break;
+            case SDLK_g:
+                SetBackgroundColor({0, 1, 0, 1});
+                std::cout << "INFO: U press g, change color green" << '\n';
+                break;
+            case SDLK_b:
+                SetBackgroundColor({0, 0, 1, 1});
+                std::cout << "INFO: U press b, change  color blue" << '\n';
+                break;
+            }
+        }
     }
-    else
+
+    void OnUpdateWindow(float deltaSeconds) override
     {
-      std::cout << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
-      return false;
+      std::cout << "FPS: " <<1/deltaSeconds<< '\n';
+        (void)deltaSeconds;
     }
-  }
-  else
-  {
-    std::cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
-    return false;
-  }
-  g_bRunning = true;
-  return true;
-}
 
-void render() //функция для отрисовки
-{
-  // Применяем желтый цвет для рендера
-  SDL_SetRenderDrawColor(g_pRenderer, 255, 255, 0, 255);
-
-  // очищаем окно в желтый цвет
-  SDL_RenderClear(g_pRenderer); //Очистка рендера
-
-  // Показываем окно
-  SDL_RenderPresent(g_pRenderer);
-}
-
-void handleEvents()// отлов событий
-{
-  SDL_Event event;
-  if (SDL_PollEvent(&event))
-  {
-    switch (event.type)
+    void OnDrawWindow() override
     {
-      case SDL_QUIT:
-        g_bRunning = false;
-        break;
-
-      default:
-        break;
     }
-  }
-}
+};
 
-void clean() // очищение ресурсов
+
+int main()
 {
-  SDL_DestroyWindow(g_pWindow); //Удаляем окно
-  SDL_DestroyRenderer(g_pRenderer); //Удаляем рендер
-  SDL_Quit(); //Выходим из рендера
+    CWindow window;
+    window.ShowFixedSize( {800, 600} );
+    window.DoGameLoop();
+
+    return 0;
 }
