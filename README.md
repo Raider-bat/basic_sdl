@@ -1,6 +1,6 @@
 # Basic SDL Work
 
-A small training project using the library SDL2
+A small training project using the library SDL2.
 
 # Building With CMake
 
