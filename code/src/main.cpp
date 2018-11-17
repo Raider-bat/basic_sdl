@@ -29,6 +29,7 @@ protected:
 
     void OnUpdateWindow(float deltaSeconds) override
     {
+      std::cout << "FPS: " <<1/deltaSeconds<< '\n';
         (void)deltaSeconds;
     }
 
@@ -36,6 +37,7 @@ protected:
     {
     }
 };
+
 
 int main()
 {
