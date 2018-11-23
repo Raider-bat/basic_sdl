@@ -178,7 +178,6 @@ void CAbstractWindow::DoGameLoop()
 				++count;
 
 				std::cout <<count<<'\n';
-				std::
         // Очистка буфера кадра, обновление и рисование сцены, вывод буфера кадра.
         if (running)
         {
