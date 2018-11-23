@@ -29,7 +29,7 @@ protected:
 
     void OnUpdateWindow(float deltaSeconds) override
     {
-      std::cout << "FPS: " <<1/deltaSeconds<< '\n';
+      std::cout << "FPS: " <<1000/deltaSeconds<< '\n';
         (void)deltaSeconds;
     }
 
@@ -42,21 +42,8 @@ protected:
 int main()
 {
     CWindow window;
-    window.ShowFixedSize( {800, 600} );
+    window.ShowFixedSize( {1500, 1000} );
     window.DoGameLoop();
 
-<<<<<<< HEAD
-int main(int argc, char const *argv[]) {
-  if (SDL_Init(SDL_INIT_VIDEO) != 0){
-    std::cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
-    return 1;
-  }
-  else
-    std::cout << "Succsess compile! " << '\n';
-    std::cout <<" Change in codes" << '\n';
-	SDL_Quit();
-	return 0;
-=======
-    return 0;
->>>>>>> 5cade8f35bdf1d85984d012abedfc11f8a5b9292
+
 }
