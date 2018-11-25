@@ -1,5 +1,9 @@
 #pragma once
 #include <chrono>
+#include <cstring>
+#include <GL/glu.h>
+
+
 class CUtils
 {
 public:
@@ -7,7 +11,7 @@ public:
 
   static void InitOnceSDL2();
   static void ValidateSDL2Errors();
-
+  static void ValidateOpenGLErrors();
 };
 
 class CChronometer
