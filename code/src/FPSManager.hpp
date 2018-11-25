@@ -10,9 +10,16 @@ public:
   void LimitFPS(float _fps);
   void ShowCurrentFPS();
   float GetCurrentFPS();
+<<<<<<< HEAD
   float GetTargetFPS();
 
 private:
+=======
+  float GetLimitFPS();
+
+private:
+
+>>>>>>> dff4130033fe7b80f6efc9f0c876fca2693c8d2a
   float currentFps; //value of current fps
   float targetFps;
 
