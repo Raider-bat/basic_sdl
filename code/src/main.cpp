@@ -1,4 +1,4 @@
-#include "AbstractWindow.h"
+#include "AbstractWindow.hpp"
 #include <SDL.h>
 #include <iostream>
 

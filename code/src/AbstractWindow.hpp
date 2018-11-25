@@ -12,7 +12,6 @@ public:
 
     void ShowFixedSize(glm::ivec2 const& size);
     void DoGameLoop();
-    void drawCube(float xrf, float yrf, float zrf);
 protected:
     void SetBackgroundColor(glm::vec4 const& color);
 
