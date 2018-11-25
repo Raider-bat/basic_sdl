@@ -3,7 +3,6 @@
 #include <glm/glm.hpp>
 #include <thread>         // std::this_thread::sleep_for
 #include <GL/glu.h>
-#include <iostream>
 namespace
 {
 const char WINDOW_TITLE[] = "DA ETO IZI";
@@ -159,7 +158,6 @@ void CAbstractWindow::DoGameLoop()
    	glLoadIdentity();
    	gluPerspective(45.0f, (float) 1500/ (float) 1000, 0.1f, 100.0f); // настраиваем трехмерную перспективу
    	glMatrixMode(GL_MODELVIEW); // переходим в трехмерный режим
-		int count(0);
     while (running)
     {
 
@@ -175,9 +173,8 @@ void CAbstractWindow::DoGameLoop()
                 OnWindowEvent(event);
             }
         }
-				++count;
 
-				std::cout <<count<<'\n';
+
         // Очистка буфера кадра, обновление и рисование сцены, вывод буфера кадра.
         if (running)
         {
