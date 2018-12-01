@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -Wextra -pedantic -std=c++11  -Wall -Wextra -pedantic -std=c++11 -g -g   CMakeFiles/code.dir/src/main.cpp.o CMakeFiles/code.dir/src/AbstractWindow.cpp.o CMakeFiles/code.dir/src/Utils.cpp.o  -o code -rdynamic /usr/local/lib/libSDL2main.a /usr/local/lib/libSDL2.so -lpthread -lGLU -lGL -Wl,-rpath,/usr/local/lib: 

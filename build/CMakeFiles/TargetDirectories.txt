@@ -1,0 +1,13 @@
+/home/raider-bat/basic_sdl/build/CMakeFiles/install.dir
+/home/raider-bat/basic_sdl/build/CMakeFiles/list_install_components.dir
+/home/raider-bat/basic_sdl/build/CMakeFiles/install/strip.dir
+/home/raider-bat/basic_sdl/build/CMakeFiles/install/local.dir
+/home/raider-bat/basic_sdl/build/CMakeFiles/rebuild_cache.dir
+/home/raider-bat/basic_sdl/build/CMakeFiles/edit_cache.dir
+/home/raider-bat/basic_sdl/build/code/CMakeFiles/install.dir
+/home/raider-bat/basic_sdl/build/code/CMakeFiles/list_install_components.dir
+/home/raider-bat/basic_sdl/build/code/CMakeFiles/rebuild_cache.dir
+/home/raider-bat/basic_sdl/build/code/CMakeFiles/code.dir
+/home/raider-bat/basic_sdl/build/code/CMakeFiles/install/strip.dir
+/home/raider-bat/basic_sdl/build/code/CMakeFiles/install/local.dir
+/home/raider-bat/basic_sdl/build/code/CMakeFiles/edit_cache.dir
