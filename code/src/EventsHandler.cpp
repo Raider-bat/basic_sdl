@@ -13,7 +13,7 @@ glm::vec2 GetMousePosition(const SDL_MouseMotionEvent &event)
 }
 }
 
-void sdl_handle::EventHandle(const SDL_Event &event,const IEventActor &actor)
+void sdl::EventHandle(const SDL_Event &event,IEventActor &actor)
 {
   switch (event.type) {
     case SDL_MOUSEBUTTONDOWN:
@@ -26,7 +26,7 @@ void sdl_handle::EventHandle(const SDL_Event &event,const IEventActor &actor)
       actor.OnMouseMotion(event.motion);
       break;
     case SDL_MOUSEWHEEL:
-      acceptor.OnMouseWheel(event.wheel);
+      actor.OnMouseWheel(event.wheel);
       break;
     case SDL_KEYDOWN:
       actor.OnKeyDown(event.key);

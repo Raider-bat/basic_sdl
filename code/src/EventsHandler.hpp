@@ -1,7 +1,9 @@
 #pragma once
 #include "AbstractWindow.hpp"
 
-namespace sdl_handle
+class IEventActor;
+
+namespace sdl
 {
   void EventHandle(const SDL_Event &event, IEventActor &actor);
 }
@@ -9,11 +11,11 @@ namespace sdl_handle
 class IEventActor
 {
 public:
-  virtual ~IEventActor();
+  virtual ~IEventActor() = default;
 
   virtual void OnResize(){};
 
-  virtual void OnMouseUp(const SDL_MouseButtonEvent &){}
+  virtual void OnMouseUp(const SDL_MouseButtonEvent & ){}
   virtual void OnMouseDown(const SDL_MouseButtonEvent &){}
   virtual void OnMouseMotion(const SDL_MouseMotionEvent &) {}
   virtual void OnMouseWheel(const SDL_MouseWheelEvent &) {}
@@ -28,6 +30,6 @@ class CAbstractEventDispatchWindow
 protected:
     void OnWindowEvent(const SDL_Event &event) final
     {
-        sdl_handle::EventHandle(event, *this);
+        sdl::EventHandle(event, *this);
     }
 };
